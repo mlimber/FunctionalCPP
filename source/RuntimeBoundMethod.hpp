@@ -34,7 +34,7 @@ public:
     template<typename Callable>
     ConstRuntimeBoundMethodImpl& operator=(Callable&& f)
     {
-        f_ = std::forward<Callable>(f);
+        f_ = std::move(f);
         return *this;
     }
     
@@ -81,7 +81,7 @@ public:
     template<typename Callable>
     RuntimeBoundMethodImpl& operator=(Callable&& f)
     {
-        f_ = std::forward<Callable>(f);
+        f_ = std::move(f);
         return *this;
     }
     
